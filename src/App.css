@@ -30,6 +30,34 @@
   color: #61dafb;
 }
 
+.button{
+    /* background-color: #4CAF50;  */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    size: 32px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top:15px;
+}
+.but {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.but:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

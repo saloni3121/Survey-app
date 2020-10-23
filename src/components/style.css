@@ -5,3 +5,28 @@
     margin-left: 1000px;
     margin-top: -60px;
   }
+
+
+/* #close {
+    background: teal;
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+#close:after {
+    content: '';
+    height: 60px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 28px;
+}
+
+#close:before {
+    content: '';
+    height: 60px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 28px;
+} */
