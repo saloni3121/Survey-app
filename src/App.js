@@ -4,13 +4,12 @@ import './App.css';
 import { InputLabel } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
-// import Text from './components/Text';
-import Mcq from './components/Mcq';
+import Questions from './components/Questions';
 import Options from './components/Options';
 
 function App() {
 
-  const [questions, setQuestions] = useState(null);
+  const [questions, setQuestions] = useState(0);
   const [bool,setBool] = useState(false);
   const [single, setSingle] = useState(null);
   const [list, setList] = useState([]);
@@ -47,8 +46,14 @@ function App() {
   }
 
   const handleMCQ = (e)=>{
-    console.log(typeof e.target.value);
+    console.log(Number(e.target.value));
     setQuestions(Number(e.target.value));
+  }
+
+  var rows = [];
+
+  for(let i=0;i<questions;i++){
+    rows.push(<Questions />);
   }
 
   return (
@@ -69,23 +74,24 @@ function App() {
                   handleRemove={handleRemove}
                 />
               </div>
-              <div>
-              <TextField
-                id="standard-number"
-                label="Number Of Questions"
-                type="number"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                onChange={handleMCQ}
-              />
-              </div>
             </>
           )
         }):null}
-        {/* {text?<Text />:null}
-        {numeric?<Numeric />:null}
-        {mcq?<Mcq />:null} */}
+        <div>
+          <TextField
+            id="standard-number"
+            label="Number Of Questions"
+            type="number"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            onChange={handleMCQ}
+          />
+          </div>
+        <div>
+          {rows}
+        </div>
+        
     </div>
   );
 }
