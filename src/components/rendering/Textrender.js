@@ -1,15 +1,26 @@
 import React from 'react'
-import TextField from '@material-ui/core/TextField';
+import {TextField} from '@material-ui/core';
 import '../style.css';
 
-
-function Textrender({label}) {
+function Textrender({label,important}) {
     
   
   return (
     <div>
       <form id="live" noValidate autoComplete="off">
-        <TextField id="outlined-basic" label={label} variant="outlined"></TextField>
+        {!important?
+        <TextField
+        label={label}
+        variant="outlined"
+        id="validation-outlined-input"
+        />:
+      <TextField
+        required
+        label={label}
+        required
+        variant="outlined"
+        id="validation-outlined-input"
+      />}
       </form>
     </div>
   )

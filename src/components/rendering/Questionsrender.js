@@ -5,7 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
-function Questionsrender({question, opt1, opt2, opt3, opt4}) {
+function Questionsrender({question, opt1, opt2, opt3, opt4,important}) {
 
   const [value, setValue] = useState('');
 
@@ -14,10 +14,12 @@ function Questionsrender({question, opt1, opt2, opt3, opt4}) {
   };
 
   return (
-    <FormControl component="fieldset">
-      <FormLabel component="legend">Gender</FormLabel>
+    
+    
+    <FormControl style={{marginLeft : 230}}component="fieldset" required={important}> 
+      <FormLabel style={{marginTop :20}}component="legend">Question</FormLabel>
       <div>{question}</div>
-      <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+      <RadioGroup aria-label="Question" value={value} onChange={handleChange}>
         <FormControlLabel value={opt1} control={<Radio />} label={opt1} />
         <FormControlLabel value={opt2} control={<Radio />} label={opt2} />
         <FormControlLabel value={opt3} control={<Radio />} label={opt3} />

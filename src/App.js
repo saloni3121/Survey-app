@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import Questions from './components/Questions';
 import Options from './components/Options';
+// import bg from './images/bgcover';
 
 function App() {
 
@@ -39,6 +40,15 @@ function App() {
     e.preventDefault();
   }
 
+  
+  const handleMulti = (e)=>{
+    
+    let newList1 = {type:"Multi"};
+    setList([...list, newList1]);
+    
+    e.preventDefault();
+  }
+
   const handleRemove = (index)=>{
     const newTodos = [...list];
     newTodos.splice(index,1);
@@ -57,12 +67,29 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App ">
       <InputLabel id="label">What kind of input do you want to receive?</InputLabel>
         
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button class ="button but" type="button text" onClick={handleText}>Text</button>
+      <button class ="button but" type="button text" onClick={handleText}>SingleLine</button>
       <button class="button but" type="button numeric"  onClick={handleNumeric}>Numeric</button>
+      <button class="button but" type="button multi"  onClick={handleMulti}>MultiLine</button>
+      <TextField
+      style={{marginTop: "28px"}}
+      // style={{marginLeft: "50px"}}
+            // className={app.ml25}
+            // className="ml25"
+            id="standard-number "
+            label="How many MCQ type of questions do you need?"
+            type="number"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            onChange={handleMCQ}
+          />
+        <div>
+          {rows}
+        </div>
     </div>
         {list?list.map((item,index)=>{
           return(
@@ -77,7 +104,7 @@ function App() {
             </>
           )
         }):null}
-        <div>
+        {/* <div>
           <TextField
             id="standard-number"
             label="Number Of Questions"
@@ -90,7 +117,7 @@ function App() {
           </div>
         <div>
           {rows}
-        </div>
+        </div> */}
         
     </div>
   );

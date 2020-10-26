@@ -1,3 +1,5 @@
+
+
 .App {
   text-align:left;
   margin-top: 50px;
@@ -44,6 +46,7 @@
     transition-duration: 0.4s;
     cursor: pointer;
     margin-top:15px;
+    margin-right: 25px;
 }
 .but {
   background-color: white; 
@@ -55,7 +58,9 @@
   background-color: #008CBA;
   color: white;
 }
-
+.ml25{
+  margin-left:25px;
+}
 
 
 @keyframes App-logo-spin {

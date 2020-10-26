@@ -30,3 +30,19 @@
     transform: rotate(-45deg);
     left: 28px;
 } */
+/* 
+.ml{
+  margin-left:25px;
+} */
+#ml{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#comp{
+  margin-top: 48px;
+  margin-left:-170px;
+}
+#comp1{
+  margin-top: 48px;
+  margin-left:-145px;
+}
